@@ -5,8 +5,9 @@
   "codeowners": ["@blairun"],
   "config_flow": true,
   "dependencies": ["conversation"],
-  "documentation": "https://github.com/blairun/openai-compatible-conversation/blob/main/README.md",
+  "documentation": "https://github.com/blairun/openai-api-conversation/blob/main/README.md",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "requirements": ["openai==1.61.0"]
+  "requirements": ["openai==1.61.0"],
+  "version": "0.0.1"
 }

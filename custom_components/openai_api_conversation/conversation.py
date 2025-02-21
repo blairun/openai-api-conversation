@@ -1,4 +1,4 @@
-"""Conversation support for OpenAI."""
+"""Conversation support for OpenAI. Compatible APIs"""
 
 from collections.abc import AsyncGenerator, Callable
 import json
