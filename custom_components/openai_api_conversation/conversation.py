@@ -1,4 +1,4 @@
-"""Conversation support for OpenAI Compatible APIs"""
+"""Conversation support for OpenAI APIs."""
 
 from collections.abc import Callable
 import json
@@ -48,7 +48,7 @@ MAX_TOOL_ITERATIONS = 10
 async def async_setup_entry(
     hass: HomeAssistant,
     config_entry: OpenAIAPIConfigEntry,
-    async_add_entities: AddConfigEntryEntitiesCallback,
+    async_add_entities: AddEntitiesCallback,
 ) -> None:
     """Set up conversation entities."""
     agent = OpenAIAPIConversationEntity(config_entry)
