@@ -28,21 +28,8 @@
           "reasoning_effort": "Reasoning effort"
         },
         "data_description": {
-          "prompt": "Instruct how the LLM should respond. This can be a template.",
-          "reasoning_effort": "How many reasoning tokens the model should generate before creating a response to the prompt (for certain reasoning models)"
+          "prompt": "Instruct how the LLM should respond. This can be a template."
         }
-      }
-    },
-    "error": {
-      "model_not_supported": "This model is not supported, please select a different model"
-    }
-  },
-  "selector": {
-    "reasoning_effort": {
-      "options": {
-        "low": "Low",
-        "medium": "Medium",
-        "high": "High"
       }
     }
   },
