@@ -1,4 +1,4 @@
-"""Conversation support for OpenAI. Compatible APIs"""
+"""Conversation support for OpenAI Compatible APIs"""
 
 from collections.abc import Callable
 import json
