@@ -138,19 +138,19 @@ class OpenAIAPIOptionsFlow(OptionsFlow):
                 if user_input[CONF_LLM_HASS_API] == "none":
                     user_input.pop(CONF_LLM_HASS_API)
 
-                # if user_input.get(CONF_CHAT_MODEL) in UNSUPPORTED_MODELS:
-                #     errors[CONF_CHAT_MODEL] = "model_not_supported"
-                # else:
-                return self.async_create_entry(title="", data=user_input)
-            # else:
+                if user_input.get(CONF_CHAT_MODEL) in UNSUPPORTED_MODELS:
+                    errors[CONF_CHAT_MODEL] = "model_not_supported"
+                else:
+                    return self.async_create_entry(title="", data=user_input)
+            else:
                 # Re-render the options again, now with the recommended options shown/hidden
-            self.last_rendered_recommended = user_input[CONF_RECOMMENDED]
+                self.last_rendered_recommended = user_input[CONF_RECOMMENDED]
 
-            options = {
-                CONF_RECOMMENDED: user_input[CONF_RECOMMENDED],
-                CONF_PROMPT: user_input[CONF_PROMPT],
-                CONF_LLM_HASS_API: user_input[CONF_LLM_HASS_API],
-            }
+                options = {
+                    CONF_RECOMMENDED: user_input[CONF_RECOMMENDED],
+                    CONF_PROMPT: user_input[CONF_PROMPT],
+                    CONF_LLM_HASS_API: user_input[CONF_LLM_HASS_API],
+                }
 
         schema = openai_api_config_option_schema(self.hass, options)
         return self.async_show_form(
