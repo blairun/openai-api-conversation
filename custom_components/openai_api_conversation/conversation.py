@@ -195,6 +195,7 @@ class OpenAIAPIConversationEntity(
         # To prevent infinite loops, we limit the number of iterations
         for _iteration in range(MAX_TOOL_ITERATIONS):
             try:
+                LOGGER.debug("Prompt: %s", messages)
                 result = await client.chat.completions.create(
                     model=options.get(CONF_CHAT_MODEL, RECOMMENDED_CHAT_MODEL),
                     messages=messages,
