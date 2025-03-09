@@ -279,7 +279,6 @@ class OpenAIAPIConversationEntity(
                 "temperature": options.get(CONF_TEMPERATURE, RECOMMENDED_TEMPERATURE),
                 "user": chat_log.conversation_id,
                 "stream": True,
-                "base_url": self.entry.data[CONF_BASE_URL],
             }
 
             if model.startswith("o"):
