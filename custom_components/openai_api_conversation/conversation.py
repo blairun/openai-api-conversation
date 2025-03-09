@@ -21,12 +21,11 @@ from voluptuous_openapi import convert
 
 from homeassistant.components import assist_pipeline, conversation
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_LLM_HASS_API, MATCH_ALL, CONF_API_KEY
+from homeassistant.const import CONF_LLM_HASS_API, MATCH_ALL
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, intent, llm
+from homeassistant.helpers import chat_session, device_registry as dr, intent, llm
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.httpx_client import get_async_client
 
 from . import OpenAIAPIConfigEntry
 from .const import (
@@ -230,7 +229,7 @@ class OpenAIAPIConversationEntity(
     ) -> conversation.ConversationResult:
         """Process a sentence."""
         with (
-            conversation.async_get_chat_session(
+            chat_session.async_get_chat_session(
                 self.hass, user_input.conversation_id
             ) as session,
             conversation.async_get_chat_log(self.hass, session, user_input) as chat_log,
