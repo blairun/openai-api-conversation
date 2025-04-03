@@ -37,7 +37,7 @@ from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import chat_session, device_registry as dr, intent, llm
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
-from . import OpenAIAPIConfigEntry
+from . import OpenAIConfigEntry # Corrected import name
 from .const import (
     CONF_CHAT_MODEL,
     CONF_MAX_TOKENS,
@@ -69,7 +69,7 @@ MAX_TOOL_ITERATIONS = 10
 
 async def async_setup_entry(
     hass: HomeAssistant,
-    config_entry: OpenAIAPIConfigEntry,
+    config_entry: OpenAIConfigEntry, # Use corrected type hint
     async_add_entities: AddConfigEntryEntitiesCallback,
 ) -> None:
     """Set up conversation entities."""
@@ -214,7 +214,7 @@ class OpenAIAPIConversationEntity(
     _attr_has_entity_name = True
     _attr_name = None
 
-    def __init__(self, entry: OpenAIAPIConfigEntry) -> None:
+    def __init__(self, entry: OpenAIConfigEntry) -> None: # Use corrected type hint
         """Initialize the agent."""
         self.entry = entry
         self._attr_unique_id = entry.entry_id
