@@ -4,7 +4,7 @@ generate_image:
       required: true
       selector:
         config_entry:
-          integration: openai_api_conversation
+          integration: openai_api_conversation # Keep custom domain
     prompt:
       required: true
       selector:
@@ -38,3 +38,23 @@ generate_image:
           options:
             - "vivid"
             - "natural"
+generate_content:
+  fields:
+    config_entry:
+      required: true
+      selector:
+        config_entry:
+          integration: openai_api_conversation # Keep custom domain
+    prompt:
+      required: true
+      selector:
+        text:
+          multiline: true
+      example: "Hello, how can I help you?"
+    filenames:
+      selector:
+        text:
+          multiline: true
+      example: |
+        - /path/to/file1.txt
+        - /path/to/file2.txt

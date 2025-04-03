@@ -8,6 +8,6 @@
   "documentation": "https://github.com/blairun/openai-api-conversation/blob/main/README.md",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "requirements": ["openai==1.61.0"],
+  "requirements": ["openai==1.68.2"],
   "version": "2025.3.1"
 }
