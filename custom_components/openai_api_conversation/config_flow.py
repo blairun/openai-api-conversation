@@ -146,7 +146,7 @@ class OpenAIAPIOptionsFlow(OptionsFlow):
 
     def __init__(self, config_entry: ConfigEntry) -> None:
         """Initialize options flow."""
-        self.config_entry = config_entry
+        # self.config_entry = config_entry # This line is deprecated and removed
         self.last_rendered_recommended = config_entry.options.get(
             CONF_RECOMMENDED, False
         )
